@@ -16,5 +16,8 @@ pipenv install requests
 pipenv install beautifulsoup4
 pipenv install pandas
 pipenv install SQLAlchemy
+
+#pipenv requirements > requirements.txt
+
 python src/main.py
 ```
