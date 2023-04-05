@@ -3,6 +3,23 @@ An acgbox_crawler for gamer.com.tw/acgbox
 
 ## Setting UP
 
+* create a test MySQL DB with podman
+
+```shell
+#
+cd db_settingup/
+#Run a MySQL:5.7 with podman-compose
+podman-compose up -d
+
+#Stop
+podman-compose stop
+
+#
+podman stop -l
+podman ps
+```
+
+
 * [Usage with your python projects](https://github.com/hong539/setup_dev_environment/tree/main/programing_languages/python#usage-with-your-python-projects)
 
 ## Test
