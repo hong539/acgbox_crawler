@@ -16,6 +16,7 @@ podman-compose stop
 
 #
 podman stop -l
+podman rm -l
 podman ps
 ```
 
