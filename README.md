@@ -3,18 +3,23 @@ An acgbox_crawler for gamer.com.tw/acgbox
 
 ## Setting UP
 
+* [Installing Podman](https://podman.io/getting-started/#installing-podman)
 * create a test MySQL DB with podman
 
 ```shell
-#
+#create a MySQL container with podman-compose
 cd db_settingup/
+
 #Run a MySQL:5.7 with podman-compose
 podman-compose up -d
 
 #Stop
 podman-compose stop
 
-#
+#Force removal of a running or unusable container
+podman rm -f
+
+#Other commands
 podman stop -l
 podman rm -l
 podman ps
