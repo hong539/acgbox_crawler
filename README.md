@@ -8,6 +8,8 @@ An acgbox_crawler for gamer.com.tw/acgbox
 ## Test
 
 ```shell
+#After Setting UP with Usage with your python projects
+#Spawns a shell within the virtualenv.
 pipenv shell
 
 pipenv install requests
