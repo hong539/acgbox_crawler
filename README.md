@@ -10,6 +10,10 @@ An acgbox_crawler for gamer.com.tw/acgbox
 #create a MySQL container with podman-compose
 cd db_settingup/
 
+#Reminder!!!
+#Please replace this to your own password for MySQL root user
+MYSQL_ROOT_PASSWORD
+
 #Run a MySQL:5.7 with podman-compose
 podman-compose up -d
 
