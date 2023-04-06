@@ -12,6 +12,7 @@ cd db_settingup/
 
 #Reminder!!!
 #Please replace this to your own password for MySQL root user
+vim docker-compose.yml
 MYSQL_ROOT_PASSWORD
 
 #Run a MySQL:5.7 with podman-compose
