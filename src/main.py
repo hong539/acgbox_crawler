@@ -33,21 +33,6 @@ def modfy_data():
         print(df_acg)
         df_acg.to_sql('anime_favorites', engine, if_exists='append', index=False)
 
-
-
-# def getdriver():
-        
-#         path = "D:/Python_Projects/chromedriver_win32/chromedriver.exe"
-#         opt = webdriver.ChromeOptions()
-#         #opt.add_argument('--disable-dev-shm-usage')
-#         #opt.add_argument('--no-sandbox')
-#         #opt.add_argument('--headless')
-#         opt.add_argument('window-size=1920, 1080')
-#         driver = webdriver.Chrome(executable_path=path, options=opt)
-#         driver.get("https://www.google.com.tw/")        
-#         #driver.find_element(By.XPATH, search_xpath).click()
-#         sleep(2)
-
 def parser_ACG_tag_list(src_url):
         
         r = requests.get(src_url, headers=HEADERS)
@@ -92,43 +77,9 @@ def parser(number, username):
 
         print(df_acg)
 
-        # engine_url = "mysql+pymysql://root:QXYX/XHCpRM3$W4Q@192.168.56.1:3306/gamer_crawler"
+        # engine_url = "mysql+pymysql://user:passwd@host:3306/gamer_crawler"
         # engine = create_engine(engine_url, echo=True)
         # df_acg.to_sql('acg_collections', engine, if_exists='append', index=False)
-
-
-
-
-# def main():
-        # futures = []
-        # with concurrent.futures.ProcessPoolExecutor() as executor:
-        #         for i in keyword:
-        #                 future = executor.submit(getdriver, i)
-        #                 futures.append(future)
-
-        # for future in as_completed(futures):
-        #         result = future.result()
-        #         print(result)        
-
-        # #確定平行化Process已經跑完
-        # print("It's Over!")
-
-        # for i in futures:
-        #         print(i.result())
-
-        
-        # PROCNAME = "chrome" 
-        # # to clean up zombie Chrome browser
-        # #PROCNAME = "chromedriver" # to clean up zombie ChromeDriver
-        # for proc in psutil.process_iter():
-        # # check whether the process name matches
-        #         if proc.name() == PROCNAME:
-        #                 proc.kill()
-
-        # zombie_driver = "chromedriver"
-        # for i in psutil.process_iter():
-        #         if i.name() == zombie_driver:
-        #                 i.kill()
 
 if __name__ == "__main__":               
         for x in range(1, 2):
