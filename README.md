@@ -52,4 +52,5 @@ python src/main.py
 
 # others
 
+* [Design a web crawler](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md)
 * [selenium](https://pypi.org/project/selenium/)
