@@ -49,3 +49,7 @@ pipenv install SQLAlchemy
 
 python src/main.py
 ```
+
+# others
+
+* [selenium](https://pypi.org/project/selenium/)
