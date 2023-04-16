@@ -55,6 +55,7 @@ python src/main.py
 
 * [Design a web crawler](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md)
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+    * [searching-by-css-class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class)
 * [requests](https://github.com/psf/requests)
 * [selenium](https://pypi.org/project/selenium/)
     * [Selenium Documentation](https://www.selenium.dev/selenium/docs/api/py/api.html)
