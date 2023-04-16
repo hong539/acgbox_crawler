@@ -43,6 +43,7 @@ pipenv shell
 pipenv install requests
 pipenv install beautifulsoup4
 pipenv install pandas
+pipenv install lxml
 pipenv install SQLAlchemy
 
 #pipenv requirements > requirements.txt
