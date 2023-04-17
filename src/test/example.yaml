@@ -1,2 +1,5 @@
-name: John
-age: 30
+user: John
+password: password
+host: host
+port: port
+database: database
