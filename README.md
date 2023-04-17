@@ -45,6 +45,7 @@ pipenv install beautifulsoup4
 pipenv install pandas
 pipenv install lxml
 pipenv install SQLAlchemy
+pipenv install PyYAML
 
 #pipenv requirements > requirements.txt
 

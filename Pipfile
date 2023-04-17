@@ -9,6 +9,7 @@ beautifulsoup4 = "*"
 pandas = "*"
 sqlalchemy = "*"
 lxml = "*"
+pyyaml = "*"
 
 [dev-packages]
 
