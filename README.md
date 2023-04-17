@@ -47,7 +47,8 @@ pipenv install lxml
 pipenv install SQLAlchemy
 pipenv install PyYAML
 
-#pipenv requirements > requirements.txt
+#Generate a requirements.txt from Pipfile.lock. to requirements.txt
+pipenv requirements > requirements.txt
 
 python src/main.py
 ```
