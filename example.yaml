@@ -1,0 +1,9 @@
+db_settingup:
+  name: gamer_crawler
+  user: username
+  password: passwd
+  host: host
+
+target:
+  username: username
+  number: number
