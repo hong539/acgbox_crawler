@@ -19,7 +19,8 @@ ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', '
 def load_config():
         with open("../my_self.yaml", "r") as config:
                 data = yaml.safe_load(config)
-        print(data["target"]["username"])        
+        print(data["target"]["username"])
+        print(data["target"]["number"])
 
 def show_pid():
         pid = os.getpid()
