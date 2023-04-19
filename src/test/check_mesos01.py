@@ -1,3 +1,5 @@
+#要實作分散式行程安排規劃的應用，可以使用分散式任務調度框架，例如Apache Mesos、Kubernetes等。
+#這些框架可以幫助你自動調度多個行程在多台機器上執行，以達到高效利用資源的目的。
 import mesos.native
 from mesos.interface import Scheduler
 
