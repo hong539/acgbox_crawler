@@ -1,16 +1,13 @@
+import yaml
 from time import sleep
 import os
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from sqlalchemy import create_engine
-import yaml
-
-# target_url = "https://home.gamer.com.tw/acgbox.php?page=1&owner=username&tab=&m="
                 
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
-
-ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', 'XboxSX', 'Switch', '動畫', '漫畫', '輕小說']
+# ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', 'XboxSX', 'Switch', '動畫', '漫畫', '輕小說']
 
 def load_config():
         with open("../my_self.yaml", "r") as config:
@@ -36,27 +33,6 @@ def modfy_data():
         df_acg['Anime_name'] = gg
         print(df_acg)
         df_acg.to_sql('anime_favorites', engine, if_exists='append', index=False)
-
-def parser_ACG_tag_list(src_url):
-        
-        r = requests.get(src_url, headers=HEADERS)
-        soup = BeautifulSoup(r.text, 'html.parser')
-        p = soup.find_all(class_="BA-menu")
-        # ps = soup.select("body > div.BA-topbg > div > ul > li > a")
-        # print(ps)        
-
-        # print(p)        
-        catch_text = []
-        for item in p:
-                target = item.find_all('a')
-                # print(target)
-                if target != []:
-                        for x in range(len(target) - 1):
-                                target_text = target[x].text
-                                catch_text.append(target_text)
-                
-        print(catch_text)
-
 
 def parser(number, username):
         sleep(3)
@@ -85,9 +61,8 @@ def parser(number, username):
         # engine = create_engine(engine_url, echo=True)
         # df_acg.to_sql('acg_collections', engine, if_exists='append', index=False)
 
-if __name__ == "__main__":               
+if __name__ == "__main__":
         load_config()
         # for x in range(1, 2):
         #         parser(x, "username")
-        # parser_ACG_tag_list("https://www.gamer.com.tw/")
         # modfy_data()
