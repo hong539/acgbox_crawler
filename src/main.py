@@ -68,6 +68,6 @@ def parser(seed_url, number, username):
 
 if __name__ == "__main__":        
         a,b,c = load_config("../my_self.yaml")
-        for c in range(1, 2):
+        for c in range(1, c+1):
                 parser(a, c, b)
         # modfy_data()
