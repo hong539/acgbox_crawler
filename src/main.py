@@ -9,12 +9,17 @@ from sqlalchemy import create_engine
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
 # ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', 'XboxSX', 'Switch', '動畫', '漫畫', '輕小說']
 
-def load_config():
-        with open("../my_self.yaml", "r") as config:
+def load_config(path):
+        with open(path, "r") as config:
                 data = yaml.safe_load(config)
         print(data["seed"]["url"])
         print(data["target"]["username"])
         print(data["target"]["number"])
+        seed_url = data["seed"]["url"]
+        username = data["target"]["username"]
+        number = data["target"]["number"]
+        return seed_url, username, number
+        
 
 def show_pid():
         pid = os.getpid()
@@ -34,10 +39,10 @@ def modfy_data():
         print(df_acg)
         df_acg.to_sql('anime_favorites', engine, if_exists='append', index=False)
 
-def parser(number, username):
+def parser(seed_url, number, username):
         sleep(3)
         target_url = seed_url + str(number) + "&owner=" + str(username) + "&tab=&m="
-        # print(target_url)
+        print(target_url)
         
         r = requests.get(target_url, headers=HEADERS)
         soup = BeautifulSoup(r.text, 'html.parser')
@@ -61,8 +66,8 @@ def parser(number, username):
         # engine = create_engine(engine_url, echo=True)
         # df_acg.to_sql('acg_collections', engine, if_exists='append', index=False)
 
-if __name__ == "__main__":
-        load_config()
-        # for x in range(1, 2):
-        #         parser(x, "username")
+if __name__ == "__main__":        
+        a,b,c = load_config("../my_self.yaml")
+        for c in range(1, 2):
+                parser(a, c, b)
         # modfy_data()
