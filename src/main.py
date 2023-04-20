@@ -1,13 +1,9 @@
-# import concurrent.futures
-# from concurrent.futures import as_completed
 from time import sleep
 import os
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-# from datetime import datetime
 from sqlalchemy import create_engine
-# import psutil
 import yaml
 
 # target_url = "https://home.gamer.com.tw/acgbox.php?page=1&owner=username&tab=&m="
@@ -19,6 +15,7 @@ ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', '
 def load_config():
         with open("../my_self.yaml", "r") as config:
                 data = yaml.safe_load(config)
+        print(data["seed"]["url"])
         print(data["target"]["username"])
         print(data["target"]["number"])
 
@@ -63,7 +60,7 @@ def parser_ACG_tag_list(src_url):
 
 def parser(number, username):
         sleep(3)
-        target_url = "https://home.gamer.com.tw/acgbox.php?page=" + str(number) + "&owner=" + str(username) + "&tab=&m="
+        target_url = seed_url + str(number) + "&owner=" + str(username) + "&tab=&m="
         # print(target_url)
         
         r = requests.get(target_url, headers=HEADERS)

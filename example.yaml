@@ -1,3 +1,6 @@
+seed:
+  url: https://example.com=
+
 db_settingup:
   name: gamer_crawler
   user: username
