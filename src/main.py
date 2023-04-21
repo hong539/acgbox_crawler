@@ -12,6 +12,8 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 def load_config(path):
         with open(path, "r") as config:
                 data = yaml.safe_load(config)
+        #Check which type is data?
+        print(type(data))
         print(data["seed"]["url"])
         print(data["target"]["username"])
         print(data["target"]["number"])
@@ -68,6 +70,8 @@ def parser(seed_url, number, username):
 
 if __name__ == "__main__":        
         a,b,c = load_config("../my_self.yaml")
+        #You should be careful when using range() in for loop!
+        #Where to stat and where to stop?
         for c in range(1, c+1):
                 parser(a, c, b)
         # modfy_data()
