@@ -18,6 +18,11 @@ MYSQL_ROOT_PASSWORD
 #Run a MySQL:5.7 with podman-compose
 podman-compose up -d
 
+#Go to containter and test mysql
+podman exec -it db_settingup_db_1 bash
+mysql -u root -p
+show databases;
+
 #Stop
 podman-compose stop
 
