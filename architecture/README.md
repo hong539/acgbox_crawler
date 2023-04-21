@@ -4,6 +4,10 @@
 
 * [Design a web crawler](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md)
 
+## Dev logs
+
+* db_init?
+
 ## Data Structures and Algorithms
 
 * yaml

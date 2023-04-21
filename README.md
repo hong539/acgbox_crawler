@@ -50,14 +50,19 @@ pipenv install PyYAML
 #Generate a requirements.txt from Pipfile.lock. to requirements.txt
 pipenv requirements > requirements.txt
 
+#Becareful your execute PATH! XD 
 python src/main.py
 ```
 
-# others
+## others
 
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
     * [searching-by-css-class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class)
 * [requests](https://github.com/psf/requests)
+* [pandas](https://pandas.pydata.org/)
+* [lxml](https://lxml.de/)
+* [PyYAML](https://pyyaml.org/)
+* [SQLAlchemy](https://www.sqlalchemy.org/)
 * [selenium](https://pypi.org/project/selenium/)
     * [Selenium Documentation](https://www.selenium.dev/selenium/docs/api/py/api.html)
 * [Scrapy](https://scrapy.org/)
