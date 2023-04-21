@@ -28,3 +28,13 @@ python  src/main.py
 #PATH setting ERROR
 
 ```
+
+## Test
+
+```shell
+#change execute folder
+cd src
+#measure time for executing
+time python main.py
+
+```

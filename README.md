@@ -1,5 +1,5 @@
 # acgbox_crawler
-An acgbox_crawler for gamer.com.tw/acgbox
+An web_crawler for gamer.com.tw/acgbox
 
 ## Setting UP
 
