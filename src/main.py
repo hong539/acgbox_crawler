@@ -4,6 +4,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import pymysql
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import text
@@ -88,13 +89,15 @@ def parser(data):
         # engine = create_engine(engine_url, echo=True)
         # old one
         engine_url = data["db_settingup"]["sql_check_database"]
+        #check engine_url
+        print(engine_url)
         engine = create_engine(engine_url, echo=True)
         # test this way
         # engine = create_engine(f"mysql+pymysql://{data['db_settingup']['user']}:{data['db_settingup']['password']}@{data['db_settingup']['host']}:{data['db_settingup']['port']}/{data['db_settingup']['db_name']}?charset=utf8mb4")
         # metadata = MetaData()
         # users_table = Table('acg_collections', metadata, autoload=True, autoload_with=engine)        
         #src:https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html?highlight=to_sql#pandas.DataFrame.to_sql
-        df_acg.to_sql('acg_collections', engine, if_exists='fail', index=False)
+        df_acg.to_sql(name='acg_collections', con=engine, if_exists='append', index=False)
 
 if __name__ == "__main__":        
         data = load_config("../my_self.yaml")
