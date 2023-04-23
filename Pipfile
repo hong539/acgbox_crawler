@@ -12,6 +12,7 @@ lxml = "*"
 pyyaml = "*"
 pymysql = "*"
 fake-useragent = "*"
+user-agent = "*"
 
 [dev-packages]
 
