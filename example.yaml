@@ -4,7 +4,7 @@ target:
   username: username
   number: number
 db_settingup:
-  db_admin: mysql://root:passwd@host:port/
+  db_admin: mysql+<drivername>://root:passwd@host:port/
   sql_init_user: CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password'
   sql_init_database: CREATE DATABASE newdatabase
   sql_init_user_privileges: GRANT ALL PRIVILEGES ON newdatabase.* TO 'newuser'@'localhost'

@@ -85,14 +85,17 @@ def parser(data):
         #src:https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
         # engine_url = "mysql+pymysql://user:passwd@host:3306/gamer_crawler"
         # engine = create_engine(engine_url, echo=True)
+        engine_url = data["db_settingup"]["sql_check_database"]
+        engine = create_engine(engine_url, echo=True)        
         #src:https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html?highlight=to_sql#pandas.DataFrame.to_sql
-        # df_acg.to_sql('acg_collections', engine, if_exists='append', index=False)
+        df_acg.to_sql('acg_collections', engine, if_exists='append', index=False)
 
 if __name__ == "__main__":        
         data = load_config("../my_self.yaml")
-        db_init(data)
+        #When 1st time db_settingup
+        # db_init(data)
         #You should be careful when using range() in for loop!
         #Where to stat and where to stop?
-        # for data["target"]["number"] in range(1, data["target"]["number"]+1):
-        #         parser(data)
+        for data["target"]["number"] in range(1, data["target"]["number"]+1):
+                parser(data)
         # modfy_data()
