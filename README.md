@@ -35,6 +35,18 @@ podman rm -l
 podman ps
 ```
 
+* [SQLAlchemy](https://www.sqlalchemy.org/)
+    * [DBAPI Support](https://docs.sqlalchemy.org/en/20/dialects/mysql.html#dialect-mysql)
+* [Using MySQL with SQLAlchemy: Hands-on examples](https://planetscale.com/blog/using-mysql-with-sql-alchemy-hands-on-examples)
+* database driver
+    * mysql-connector-python
+    * PyMySQL
+    * MySQLdb
+* ModuleNotFoundError: No module named 'MySQLdb'
+
+```python
+mysql+<drivername>://<username>:<password>@<server>:<port>/dbname
+```
 
 * [Usage with your python projects](https://github.com/hong539/setup_dev_environment/tree/main/programing_languages/python#usage-with-your-python-projects)
 
@@ -67,7 +79,6 @@ python src/main.py
 * [pandas](https://pandas.pydata.org/)
 * [lxml](https://lxml.de/)
 * [PyYAML](https://pyyaml.org/)
-* [SQLAlchemy](https://www.sqlalchemy.org/)
 * [selenium](https://pypi.org/project/selenium/)
     * [Selenium Documentation](https://www.selenium.dev/selenium/docs/api/py/api.html)
 * [Scrapy](https://scrapy.org/)

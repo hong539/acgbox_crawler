@@ -37,10 +37,13 @@ def load_config(path):
         return data
 
 def db_init(data):
-        engine = create_engine(data["db_uri"])
+        engine = create_engine(data["db_settingup"]["db_admin"])
         
         with engine.connect() as connection:
-                connection.execute(text(data["sql_init"]))
+                connection.execute(text(data["db_settingup"]["sql_init_user"]))
+                connection.execute(text(data["db_settingup"]["sql_init_database"]))
+                connection.execute(text(data["db_settingup"]["sql_init_user_privileges"]))
+                connection.execute(text(data["db_settingup"]["sql_flush_privileges"]))
                 connection.commit()
                 connection.close()
 
@@ -87,6 +90,7 @@ def parser(data):
 
 if __name__ == "__main__":        
         data = load_config("../my_self.yaml")
+        db_init(data)
         #You should be careful when using range() in for loop!
         #Where to stat and where to stop?
         # for data["target"]["number"] in range(1, data["target"]["number"]+1):
