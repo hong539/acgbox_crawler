@@ -18,9 +18,12 @@ def load_config(path):
                 data = yaml.safe_load(config)
         #Check which type is data?
         print(type(data))
+        #Check seed/url
         print(data["seed"]["url"])
+        #Check target username & number
         print(data["target"]["username"])
         print(data["target"]["number"])
+        #Check db_settingup detials
         print(data["db_settingup"]["db_admin"])
         print(data["db_settingup"]["sql_init_user"])
         print(data["db_settingup"]["sql_init_database"])
