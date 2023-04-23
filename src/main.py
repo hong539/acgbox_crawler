@@ -7,6 +7,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import text
+from sqlalchemy import Table, MetaData
                 
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
 # ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', 'XboxSX', 'Switch', '動畫', '漫畫', '輕小說']
@@ -62,7 +63,7 @@ def modfy_data():
         df_acg = pd.DataFrame(columns=['Anime_name'])
         df_acg['Anime_name'] = gg
         print(df_acg)
-        df_acg.to_sql('anime_favorites', engine, if_exists='append', index=False)
+        df_acg.to_sql('anime_favorites', engine, if_exists='replace', index=False)
 
 def parser(data):
         sleep(3)
@@ -85,10 +86,15 @@ def parser(data):
         #src:https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
         # engine_url = "mysql+pymysql://user:passwd@host:3306/gamer_crawler"
         # engine = create_engine(engine_url, echo=True)
+        # old one
         engine_url = data["db_settingup"]["sql_check_database"]
-        engine = create_engine(engine_url, echo=True)        
+        engine = create_engine(engine_url, echo=True)
+        # test this way
+        # engine = create_engine(f"mysql+pymysql://{data['db_settingup']['user']}:{data['db_settingup']['password']}@{data['db_settingup']['host']}:{data['db_settingup']['port']}/{data['db_settingup']['db_name']}?charset=utf8mb4")
+        # metadata = MetaData()
+        # users_table = Table('acg_collections', metadata, autoload=True, autoload_with=engine)        
         #src:https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html?highlight=to_sql#pandas.DataFrame.to_sql
-        # df_acg.to_sql('acg_collections', engine, if_exists='append', index=False)
+        df_acg.to_sql('acg_collections', engine, if_exists='fail', index=False)
 
 if __name__ == "__main__":        
         data = load_config("../my_self.yaml")
