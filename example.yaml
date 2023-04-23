@@ -1,6 +1,8 @@
 seed:
   url: https://example.com=
-
+target:
+  username: username
+  number: number
 db_settingup:
   db_admin: mysql://root:passwd@host:port/
   sql_init_user: CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password'
@@ -12,7 +14,3 @@ db_settingup:
   user: username
   password: passwd
   host: host
-
-target:
-  username: username
-  number: number

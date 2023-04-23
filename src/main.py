@@ -21,6 +21,16 @@ def load_config(path):
         print(data["seed"]["url"])
         print(data["target"]["username"])
         print(data["target"]["number"])
+        print(data["db_settingup"]["db_admin"])
+        print(data["db_settingup"]["sql_init_user"])
+        print(data["db_settingup"]["sql_init_database"])
+        print(data["db_settingup"]["sql_init_user_privileges"])
+        print(data["db_settingup"]["sql_flush_privileges"])
+        print(data["db_settingup"]["sql_check_database"])
+        print(data["db_settingup"]["db_name"])
+        print(data["db_settingup"]["user"])
+        print(data["db_settingup"]["password"])
+        print(data["db_settingup"]["host"])
         return data
 
 def db_init(data):
@@ -76,6 +86,6 @@ if __name__ == "__main__":
         data = load_config("../my_self.yaml")
         #You should be careful when using range() in for loop!
         #Where to stat and where to stop?
-        for data["target"]["number"] in range(1, data["target"]["number"]+1):
-                parser(data)
+        # for data["target"]["number"] in range(1, data["target"]["number"]+1):
+        #         parser(data)
         # modfy_data()
