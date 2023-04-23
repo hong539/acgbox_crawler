@@ -5,9 +5,13 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql import text
                 
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
 # ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', 'XboxSX', 'Switch', '動畫', '漫畫', '輕小說']
+
+from sqlalchemy import create_engine
 
 def load_config(path):
         with open(path, "r") as config:
@@ -21,7 +25,13 @@ def load_config(path):
         username = data["target"]["username"]
         number = data["target"]["number"]
         return seed_url, username, number
+
+def db_init():
+        engine = create_engine(data["db_uri"])
         
+        with engine.connect() as connection:
+                connection.execute(text(data["sql_init"]))
+                connection.commit()
 
 def show_pid():
         pid = os.getpid()
