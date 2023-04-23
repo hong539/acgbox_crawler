@@ -88,7 +88,7 @@ def parser(data):
         engine_url = data["db_settingup"]["sql_check_database"]
         engine = create_engine(engine_url, echo=True)        
         #src:https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html?highlight=to_sql#pandas.DataFrame.to_sql
-        df_acg.to_sql('acg_collections', engine, if_exists='append', index=False)
+        # df_acg.to_sql('acg_collections', engine, if_exists='append', index=False)
 
 if __name__ == "__main__":        
         data = load_config("../my_self.yaml")
