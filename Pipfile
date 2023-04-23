@@ -11,6 +11,7 @@ sqlalchemy = "*"
 lxml = "*"
 pyyaml = "*"
 pymysql = "*"
+fake-useragent = "*"
 
 [dev-packages]
 

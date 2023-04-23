@@ -60,6 +60,7 @@ mysql+<drivername>://<username>:<password>@<server>:<port>/dbname
 #Spawns a shell within the virtualenv.
 pipenv shell
 
+#Packages
 pipenv install requests
 pipenv install beautifulsoup4
 pipenv install pandas
@@ -67,6 +68,7 @@ pipenv install lxml
 pipenv install SQLAlchemy
 pipenv install PyYAML
 pipenv install pymysql
+pipenv install fake-useragent
 
 #Generate a requirements.txt from Pipfile.lock. to requirements.txt
 pipenv requirements > requirements.txt

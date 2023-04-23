@@ -1,16 +1,18 @@
 import yaml
 from time import sleep
 import os
+from fake_useragent import UserAgent
+import fake_useragent
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import pymysql
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import text
 from sqlalchemy import Table, MetaData
-                
-HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
+
+#For simple test                
+# HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
 # ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', 'XboxSX', 'Switch', '動畫', '漫畫', '輕小說']
 
 from sqlalchemy import create_engine
@@ -26,16 +28,16 @@ def load_config(path):
         print(data["target"]["username"])
         print(data["target"]["number"])
         #Check db_settingup detials
-        print(data["db_settingup"]["db_admin"])
-        print(data["db_settingup"]["sql_init_user"])
-        print(data["db_settingup"]["sql_init_database"])
-        print(data["db_settingup"]["sql_init_user_privileges"])
-        print(data["db_settingup"]["sql_flush_privileges"])
-        print(data["db_settingup"]["sql_check_database"])
-        print(data["db_settingup"]["db_name"])
-        print(data["db_settingup"]["user"])
-        print(data["db_settingup"]["password"])
-        print(data["db_settingup"]["host"])
+        # print(data["db_settingup"]["db_admin"])
+        # print(data["db_settingup"]["sql_init_user"])
+        # print(data["db_settingup"]["sql_init_database"])
+        # print(data["db_settingup"]["sql_init_user_privileges"])
+        # print(data["db_settingup"]["sql_flush_privileges"])
+        # print(data["db_settingup"]["sql_check_database"])
+        # print(data["db_settingup"]["db_name"])
+        # print(data["db_settingup"]["user"])
+        # print(data["db_settingup"]["password"])
+        # print(data["db_settingup"]["host"])
         return data
 
 def db_init(data):
@@ -66,11 +68,21 @@ def modfy_data():
         print(df_acg)
         df_acg.to_sql('anime_favorites', engine, if_exists='replace', index=False)
 
+def check_headers():
+        # ua = UserAgent(browsers=['edge', 'chrome'])
+        # ua = UserAgent(use_external_data=True)
+        ua = fake_useragent.UserAgent(fallback='chrome')
+        ua.random == 'chrome'
+        print(ua.random)
+
 def parser(data):
         sleep(3)
+        HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
+        print(HEADERS)
         target_url = data["seed"]["url"] + str(data["target"]["number"]) + "&owner=" + str(data["target"]["username"]) + "&tab=&m="
         print(target_url)
         
+        # r = requests.get(target_url, headers={'user-agent': ua.random})
         r = requests.get(target_url, headers=HEADERS)
         soup = BeautifulSoup(r.text, 'html.parser')
         p = soup.find_all(class_="acgboxname")        
@@ -101,9 +113,10 @@ def parser(data):
         df_acg.to_sql(name='acg_collections', con=engine, if_exists='append', index=False)
 
 if __name__ == "__main__":        
-        data = load_config("../my_self.yaml")
         #When 1st time db_settingup
-        # db_init(data)
+        # db_init(data)        
+        # check_headers()
+        data = load_config("../my_self.yaml")
         #You should be careful when using range() in for loop!
         #Where to stat and where to stop?
         for data["target"]["number"] in range(1, data["target"]["number"]+1):
