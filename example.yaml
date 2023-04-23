@@ -2,6 +2,12 @@ seed:
   url: https://example.com=
 
 db_settingup:
+  db_admin: mysql://root:passwd@host:port/
+  sql_init_user: CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password'
+  sql_init_database: CREATE DATABASE newdatabase
+  sql_init_user_privileges: GRANT ALL PRIVILEGES ON newdatabase.* TO 'newuser'@'localhost'
+  sql_flush_privileges: FLUSH PRIVILEGES
+  sql_check_database: mysql://newuser:password@host:port/newdatabase
   name: gamer_crawler
   user: username
   password: passwd

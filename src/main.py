@@ -21,17 +21,15 @@ def load_config(path):
         print(data["seed"]["url"])
         print(data["target"]["username"])
         print(data["target"]["number"])
-        seed_url = data["seed"]["url"]
-        username = data["target"]["username"]
-        number = data["target"]["number"]
-        return seed_url, username, number
+        return data
 
-def db_init():
+def db_init(data):
         engine = create_engine(data["db_uri"])
         
         with engine.connect() as connection:
                 connection.execute(text(data["sql_init"]))
                 connection.commit()
+                connection.close()
 
 def show_pid():
         pid = os.getpid()
@@ -50,9 +48,9 @@ def modfy_data():
         print(df_acg)
         df_acg.to_sql('anime_favorites', engine, if_exists='append', index=False)
 
-def parser(seed_url, username, number):
+def parser(data):
         sleep(3)
-        target_url = seed_url + str(number) + "&owner=" + str(username) + "&tab=&m="
+        target_url = data["seed"]["url"] + str(data["target"]["number"]) + "&owner=" + str(data["target"]["username"]) + "&tab=&m="
         print(target_url)
         
         r = requests.get(target_url, headers=HEADERS)
@@ -75,9 +73,9 @@ def parser(seed_url, username, number):
         # df_acg.to_sql('acg_collections', engine, if_exists='append', index=False)
 
 if __name__ == "__main__":        
-        a,b,c = load_config("../my_self.yaml")
+        data = load_config("../my_self.yaml")
         #You should be careful when using range() in for loop!
         #Where to stat and where to stop?
-        for c in range(1, c+1):
-                parser(a, b, c)
+        for data["target"]["number"] in range(1, data["target"]["number"]+1):
+                parser(data)
         # modfy_data()
