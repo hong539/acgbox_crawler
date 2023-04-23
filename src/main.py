@@ -88,6 +88,7 @@ def parser(data):
         # engine_url = "mysql+pymysql://user:passwd@host:3306/gamer_crawler"
         # engine = create_engine(engine_url, echo=True)
         # old one
+        # sqlalchemy engine_url password duplicate@ cause str passe_error
         engine_url = data["db_settingup"]["sql_check_database"]
         #check engine_url
         print(engine_url)
