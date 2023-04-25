@@ -85,7 +85,7 @@ def parser(data):
         # r = requests.get(target_url, headers={'user-agent': ua.random})
         r = requests.get(target_url, headers=HEADERS)
         soup = BeautifulSoup(r.text, 'html.parser')
-        p = soup.find_all(class_="acgboxname")        
+        p = soup.find_all(class_="acgboxname")
         catch_text = []
         for item in p:
                 s = item.select_one('a').text
@@ -112,7 +112,7 @@ def parser(data):
         #src:https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html?highlight=to_sql#pandas.DataFrame.to_sql
         df_acg.to_sql(name='acg_collections', con=engine, if_exists='append', index=False)
 
-if __name__ == "__main__":        
+if __name__ == "__main__":
         #When 1st time db_settingup
         # db_init(data)        
         # check_headers()
