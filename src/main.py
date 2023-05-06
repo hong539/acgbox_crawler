@@ -18,6 +18,14 @@ from sqlalchemy import Table, MetaData
 from sqlalchemy import create_engine
 
 def load_config(path):
+        """Load configuration data from a YAML file.
+
+        Args:
+        path (str): The path to the YAML configuration file.
+
+        Returns:
+        dict: The configuration data.
+        """         
         with open(path, "r") as config:
                 data = yaml.safe_load(config)
         #Check which type is data?
