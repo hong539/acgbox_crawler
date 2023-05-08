@@ -121,10 +121,10 @@ def parser(data):
         df_acg.to_sql(name='acg_collections', con=engine, if_exists='append', index=False)
 
 if __name__ == "__main__":
-        #When 1st time db_settingup
-        # db_init(data)        
         # check_headers()
         data = load_config("../my_self.yaml")
+        #When 1st time db_settingup
+        # db_init(data)
         #You should be careful when using range() in for loop!
         #Where to stat and where to stop?
         for data["target"]["number"] in range(1, data["target"]["number"]+1):
