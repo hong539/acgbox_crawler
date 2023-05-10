@@ -1,15 +1,12 @@
 import yaml
 from time import sleep
 import os
-from fake_useragent import UserAgent
 import fake_useragent
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import text
-from sqlalchemy import Table, MetaData
 
 #For simple test                
 # HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
@@ -17,6 +14,16 @@ from sqlalchemy import Table, MetaData
 
 from sqlalchemy import create_engine
 
+class acgbox_crawler(object):
+        """docstring for ClassName."""
+        def __init__(self, path):
+            self.path = path
+
+        def load_config(self):
+            with open(self.path, "r") as config:
+                    self.data = yaml.safe_load(config)
+
+      
 def load_config(path):
         """Load configuration data from a YAML file.
 
@@ -37,15 +44,6 @@ def load_config(path):
         print(data["target"]["number"])
         #Check db_settingup detials
         # print(data["db_settingup"]["db_admin"])
-        # print(data["db_settingup"]["sql_init_user"])
-        # print(data["db_settingup"]["sql_init_database"])
-        # print(data["db_settingup"]["sql_init_user_privileges"])
-        # print(data["db_settingup"]["sql_flush_privileges"])
-        # print(data["db_settingup"]["sql_check_database"])
-        # print(data["db_settingup"]["db_name"])
-        # print(data["db_settingup"]["user"])
-        # print(data["db_settingup"]["password"])
-        # print(data["db_settingup"]["host"])
         return data
 
 def db_init(data):
