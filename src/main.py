@@ -20,9 +20,18 @@ class acgbox_crawler(object):
             self.path = path
 
         def load_config(self):
-            with open(self.path, "r") as config:
-                    self.data = yaml.safe_load(config)
+                with open(self.path, "r") as config:
+                        self.data = yaml.safe_load(config)
 
+        def db_init(self):
+                pass
+        
+        def parser(self):
+                pass
+
+        def modfy_data(self):
+                pass
+      
       
 def load_config(path):
         """Load configuration data from a YAML file.
