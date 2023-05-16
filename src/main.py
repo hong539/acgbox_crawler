@@ -10,7 +10,7 @@ from sqlalchemy.sql import text
 
 #For simple test                
 # HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
-# ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', 'XboxSX', 'Switch', '動畫', '漫畫', '輕小說']
+
 
 from sqlalchemy import create_engine
 
@@ -71,6 +71,7 @@ def show_pid():
         return pid
 
 def modfy_data():
+        # ACG_tag_list = ['Android', 'iOS', 'PC線上', 'PC單機', 'WEB', 'PS5', 'PS4', 'XboxSX', 'Switch', '動畫', '漫畫', '輕小說']
         engine_url = "mysql+pymysql://user:passwd@host:3306/gamer_crawler"
         engine = create_engine(engine_url, echo=True)
         loads = pd.read_sql('acg_collections', engine)
