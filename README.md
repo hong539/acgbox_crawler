@@ -1,6 +1,12 @@
 # acgbox_crawler
 An web_crawler for gamer.com.tw/acgbox
 
+## to_do_list
+
+* func
+* class acgbox_crawler(object)
+
+
 ## Setting UP
 
 * [Installing Podman](https://podman.io/getting-started/#installing-podman)
@@ -76,9 +82,8 @@ pipenv install tornado
 pipenv requirements > requirements.txt
 
 #Becareful your execute PATH! XD 
-python src/main.py
-
 #Test
+pipenv shell
 cd src
 python main.py
 #time a simple command or give resource usage
