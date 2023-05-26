@@ -1,7 +1,8 @@
 # architecture
 
-## how to design an web crawler?
+## guides or tips
 
+* web crawler vs web scraping?
 * [Design a web crawler](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md)
 
 ## Dev logs
