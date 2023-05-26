@@ -1,5 +1,16 @@
 # architecture
 
+## design
+
+* Which level?
+  * Application layer ?
+
+## resources
+
+* a programming language to deal with computing
+* an Linux server for computing
+* an SQL database for stored info from compting
+
 ## diagrams
 
 ```mermaid
