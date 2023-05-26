@@ -2,8 +2,14 @@
 
 ## design
 
+* What is the purpose for this project?
+  * For scraping ACG collect names with specific user
+
 * Which level?
   * Application layer ?
+
+* How many user will use?
+  * lower than 10 users
 
 ## resources
 
