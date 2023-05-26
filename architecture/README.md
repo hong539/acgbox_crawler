@@ -1,5 +1,15 @@
 # architecture
 
+## diagrams
+
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+
 ## guides or tips
 
 * web crawler vs web scraping?
