@@ -100,6 +100,7 @@ time python main.py
 
 ## others
 
+* [HTML div/table tag TABLE GENERATOR](https://divtable.com/generator/)
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
     * [searching-by-css-class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class)
 * [requests](https://github.com/psf/requests)
