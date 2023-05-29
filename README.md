@@ -100,21 +100,25 @@ time python main.py
 
 ## others
 
-* [Playwright/python](https://playwright.dev/python/)
-    * enables reliable end-to-end testing for modern web apps.
-* [htmlgenerator](https://pypi.org/project/htmlgenerator/)
-* [Yattag/ a generator for html/xml/pythonic ](https://www.yattag.org/)
-* [HTML div/table tag TABLE GENERATOR](https://divtable.com/generator/)
-* [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-    * [searching-by-css-class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class)
-* [requests](https://github.com/psf/requests)
-* [pandas](https://pandas.pydata.org/)
-* [lxml](https://lxml.de/)
+* html generator    
+    * [htmlgenerator](https://pypi.org/project/htmlgenerator/)
+    * [Yattag/ a generator for html/xml/pythonic ](https://www.yattag.org/)
+    * [HTML div/table tag TABLE GENERATOR](https://divtable.com/generator/)
+
+* html parser
+    * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+        * [searching-by-css-class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class)
+    * [requests](https://github.com/psf/requests)
+    * [pandas](https://pandas.pydata.org/)
+    * [lxml](https://lxml.de/)
 * [PyYAML](https://pyyaml.org/)
-* [selenium](https://pypi.org/project/selenium/)
-    * [Selenium Documentation](https://www.selenium.dev/selenium/docs/api/py/api.html)
-* [Scrapy](https://scrapy.org/)
-* [MechanicalSoup](https://mechanicalsoup.readthedocs.io/en/stable/)
+* Automation test
+    * [selenium](https://pypi.org/project/selenium/)
+        * [Selenium Documentation](https://www.selenium.dev/selenium/docs/api/py/api.html)
+    * [Scrapy](https://scrapy.org/)
+    * [Playwright/python](https://playwright.dev/python/)
+        * enables reliable end-to-end testing for modern web apps.
+    * [MechanicalSoup](https://mechanicalsoup.readthedocs.io/en/stable/)
 
 ## Important!!!
 
