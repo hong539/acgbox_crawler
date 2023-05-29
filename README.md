@@ -5,8 +5,7 @@ An web_crawler for gamer.com.tw/acgbox
 
 * research or implementation function for html tags div to table
 * check which files will be stored via podman when not executing MySQL container
-* implementation function CRUD API for MySQL
-* implementation function CRUD method for MySQL
+* implementation function CRUD API/query method for MySQL
 * implementation function load_data
 * implementation function modfy_data with advanced string replace in pandas.DataFrame
 * refactor some parts codes to class acgbox_crawler(object)
