@@ -20,15 +20,12 @@
 ## diagrams
 
 ```mermaid
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
+flowchart LR
+    A[load_config] -->|Get variables from yaml| B(for loop)
+    B --> C{parser}
+    C -->|1st| D[URL generator]
+    C -->|2nd| E[html tags treatment]
+    C -->|3rd| F[update to SQL db]
 ```
 
 ## guides or tips
