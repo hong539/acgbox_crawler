@@ -3,7 +3,7 @@ An web_crawler for gamer.com.tw/acgbox
 
 ## to_do_list
 
-* implementation function update method for only update new ACG collects?
+* pandas to_sql method if_exists='append' ~~implementation function update method for only update new ACG collects?~~
 * implementation function finding method for find last pages?
 * research or implementation function for html tags div to table
 * check which files will be stored via podman when not executing MySQL container
