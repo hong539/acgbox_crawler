@@ -44,14 +44,6 @@ flowchart LR
     * 可以使用YAML表示字典、列表和鍵值對等資料結構。
     * In our use case, <class 'dict'>
 
-## file strutures
-
-.
-├── architecture
-├── db_settingup
-└── src
-    └── test
-
 ## Where to execute?
 
 ```shell

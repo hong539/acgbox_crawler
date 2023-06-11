@@ -3,6 +3,7 @@ An web_crawler for gamer.com.tw/acgbox
 
 ## to_do_list
 
+* [TritonHo/RDBMS course](https://github.com/TritonHo/slides/blob/master/Taipei%202019-04%20course/lesson0.pdf)
 * pandas to_sql method if_exists='append' ~~implementation function update method for only update new ACG collects?~~
 * implementation function finding method for find last pages?
 * research or implementation function for html tags div to table
