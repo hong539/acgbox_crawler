@@ -17,10 +17,16 @@ An web_crawler for gamer.com.tw/acgbox
 
 ## Setting UP
 
-* [Installing Podman](https://podman.io/getting-started/#installing-podman)
+* [Installing Podman](https://podman.io/docs/installation#installing-on-linux)
 * create a test MySQL DB with podman
 
 ```shell
+#update package databases
+sudo pacman -Syy
+#install podman
+sudo pacman -S podman
+#podman: /usr/lib/libc.so.6: version `GLIBC_2.38' not found (required by podman)
+
 #create a MySQL container with podman-compose
 cd db_settingup/
 
