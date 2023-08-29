@@ -15,17 +15,46 @@ An web_crawler for gamer.com.tw/acgbox
 * refactor some parts codes to class acgbox_crawler(object)
 
 
-## Setting UP
+## Prerequisites
 
+* Setup all on My Arch Linux VM
+* Python version ==3.8
+* [Usage with pyenv+pipenv](https://github.com/hong539/setup_dev_environment/blob/main/programming_languages/python/python.md#usage-with-pyenvpipenv)
 * [Installing Podman](https://podman.io/docs/installation#installing-on-linux)
+* [fuse-overlayfs](https://github.com/containers/fuse-overlayfs)
+* [Podman is gaining rootless overlay support](https://www.redhat.com/sysadmin/podman-rootless-overlay)
+* [Archwiki/Podman](https://wiki.archlinux.org/title/Podman)
+    * Enable native rootless overlays
+* [podman-docker](https://archlinux.org/packages/extra/x86_64/podman-docker/)
+* [podman-compose](https://github.com/containers/podman-compose)
 * create a test MySQL DB with podman
+* [SQLAlchemy](https://www.sqlalchemy.org/)
+    * [DBAPI Support](https://docs.sqlalchemy.org/en/20/dialects/mysql.html#dialect-mysql)
+* [Using MySQL with SQLAlchemy: Hands-on examples](https://planetscale.com/blog/using-mysql-with-sql-alchemy-hands-on-examples)
+* database driver
+    * mysql-connector-python
+    * PyMySQL
+    * MySQLdb
 
 ```shell
 #update package databases
 sudo pacman -Syy
+
 #install podman
 sudo pacman -S podman
+#podman-docker
+sudo pacman -S podman-docker
+#podman-compose
+sudo pacman -S podman-compose
+#fuse-overlayfs
+sudo pacman -S fuse-overlayfs
+
 #podman: /usr/lib/libc.so.6: version `GLIBC_2.38' not found (required by podman)
+#upgrading packages
+sudo pacman -Syu
+
+#check podman
+podman --version
 
 #create a MySQL container with podman-compose
 cd db_settingup/
@@ -34,6 +63,14 @@ cd db_settingup/
 #Please replace this to your own password for MySQL root user
 vim docker-compose.yml
 MYSQL_ROOT_PASSWORD
+
+#Error: kernel does not support overlay fs: 'overlay' is not supported over extfs at "/home/hong/.local/share/containers/storage/overlay": backing file system is unsupported for this graph driver
+sudo podman info --format '{{.Store.Driver}}'
+sudo podman info --format '{{.Store.GraphDriverName}}'
+#check kernel version
+uname -r
+#Enable native rootless overlays
+podman system reset
 
 #Run a MySQL:5.7 with podman-compose
 podman-compose up -d
@@ -55,13 +92,6 @@ podman rm -l
 podman ps
 ```
 
-* [SQLAlchemy](https://www.sqlalchemy.org/)
-    * [DBAPI Support](https://docs.sqlalchemy.org/en/20/dialects/mysql.html#dialect-mysql)
-* [Using MySQL with SQLAlchemy: Hands-on examples](https://planetscale.com/blog/using-mysql-with-sql-alchemy-hands-on-examples)
-* database driver
-    * mysql-connector-python
-    * PyMySQL
-    * MySQLdb
 * ModuleNotFoundError: No module named 'MySQLdb'
 * sqlalchemy engine_url password duplicate@ cause str passe_error
     * 請問程式設計中，對於密碼之字元/字串的特殊符號(例如在MySQL的密碼中有使用到符號@)解析錯誤是不是常常出現?
@@ -70,8 +100,6 @@ podman ps
 ```python
 mysql+<drivername>://<username>:<password>@<server>:<port>/dbname
 ```
-
-* [Usage with your python projects](https://github.com/hong539/setup_dev_environment/tree/main/programing_languages/python#usage-with-your-python-projects)
 
 ## Test
 
