@@ -65,6 +65,7 @@ pipenv shell
 pipenv install
 
 #add some Packages
+pipenv install "psycopg[binary,pool]"
 pipenv install requests
 pipenv install beautifulsoup4
 pipenv install pandas

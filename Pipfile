@@ -14,6 +14,7 @@ pymysql = "*"
 fake-useragent = "*"
 user-agent = "*"
 tornado = "*"
+psycopg = {version = "*", extras = ["binary", "pool"]}
 
 [dev-packages]
 

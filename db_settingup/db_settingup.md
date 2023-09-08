@@ -3,9 +3,29 @@
 ## tips/guides/etc...
 
 ```shell
-$ sudo -iu postgres
-$ createdb acgbox_crawler
-$ psql -d acgbox_crawler
+sudo -iu postgres
+createuser --interactive
+createdb acgbox_crawler
+psql -d acgbox_crawler
+
+psql -U myuser -W -h localhost -d mydb
+
+#SQL part for PostgreSQL
+#src: https://wiki.archlinux.org/title/PostgreSQL#Require_password_for_login
+#ALTER PASSWORD for USER
+ALTER USER acgbox_bot WITH PASSWORD 'new_password';
+
+#edit pg_hba.conf/postgresql.conf
+sudo vim /var/lib/postgres/data/pg_hba.conf
+sudo vim /var/lib/postgres/data/postgresql.conf
+
+#restart PostergreSQL daemon
+sudo systemctl restart postgresql.service
+
+#Test codes with main.py
+#psycopg.errors.InsufficientPrivilege: permission denied for schema public
+GRANT ALL PRIVILEGES ON DATABASE acgbox_crawler TO acgbox_bot;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO acgbox_bot;
 ```
 
 * [Collation version mismatch](https://dba.stackexchange.com/questions/324649/collation-version-mismatch)
@@ -28,8 +48,12 @@ ALTER DATABASE postgres REFRESH COLLATION VERSION;
     * MySQLdb
 * create a test MySQL DB with podman
 * [SQLAlchemy](https://www.sqlalchemy.org/)
+    * [install psycopg](https://pypi.org/project/psycopg/)
+    * [Psycopg 3](https://www.psycopg.org/psycopg3/)
+    * [Support for the PostgreSQL database.](https://docs.sqlalchemy.org/en/20/dialects/postgresql.html)
     * [DBAPI Support](https://docs.sqlalchemy.org/en/20/dialects/mysql.html#dialect-mysql)
-    * [Using MySQL with SQLAlchemy: Hands-on examples](https://planetscale.com/blog/using-mysql-with-sql-alchemy-hands-on-examples)
+    * [Database URLs](https://docs.sqlalchemy.org/en/20/core/engines.html#database-urls)
+    * [Using MySQL with SQLAlchemy: Hands-on examples](https://planetscale.com/blog/using-mysql-with-sql-alchemy-hands-on-examples)    
 * container part(such as Podman/docker...etc)
     * [Installing Podman](https://podman.io/docs/installation#installing-on-linux)
     * [fuse-overlayfs](https://github.com/containers/fuse-overlayfs)
