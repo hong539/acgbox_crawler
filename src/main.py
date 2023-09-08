@@ -11,9 +11,6 @@ from sqlalchemy.sql import text
 #For simple test                
 # HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',}
 
-
-from sqlalchemy import create_engine
-
 class acgbox_crawler(object):
         """docstring for ClassName."""
         def __init__(self, path):
