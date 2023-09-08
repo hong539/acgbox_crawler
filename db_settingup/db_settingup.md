@@ -2,6 +2,21 @@
 
 ## tips/guides/etc...
 
+```shell
+$ sudo -iu postgres
+$ createdb acgbox_crawler
+$ psql -d acgbox_crawler
+```
+
+* [Collation version mismatch](https://dba.stackexchange.com/questions/324649/collation-version-mismatch)
+
+```sql
+REINDEX DATABASE postgres;
+ALTER DATABASE postgres REFRESH COLLATION VERSION;
+```
+
+* [Archwiki/PostgreSQL#Familiarize_with_PostgreSQL](https://wiki.archlinux.org/title/PostgreSQL#Familiarize_with_PostgreSQL)
+* rolling release vs Point release
 * [createdb](https://www.postgresql.org/docs/current/app-createdb.html)
 * [pg_upgrade](https://www.postgresql.org/docs/current/pgupgrade.html)
 * [Look at "pacman directly install PostgreSQL on Arch Linux", if you want to use PostgreSQL instead of MySQL 5.7](https://github.com/hong539/local_library_website#prerequisites)
