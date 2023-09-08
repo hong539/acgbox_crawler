@@ -7,7 +7,7 @@ An Python bot for doing ETL(extract, transform, load) personal favorite lists fr
 * Setup all on My Arch Linux VM
     * Python version ==3.8 and all dependent will be managed via pyenv+pipenv
         * [Usage with pyenv+pipenv](https://github.com/hong539/setup_dev_environment/blob/main/programming_languages/python/python.md#usage-with-pyenvpipenv)
-    * Look at db_settingup for prepare your database server(Here I will use PostgreSQL 15 as an example)
+    * Look at directory db_settingup for prepare your database server(Here I will use PostgreSQL 15 as an example)
 
 ## to_do_list
 
