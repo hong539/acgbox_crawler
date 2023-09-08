@@ -2,6 +2,7 @@
 
 ## tips/guides/etc...
 
+* [createdb](https://www.postgresql.org/docs/current/app-createdb.html)
 * [pg_upgrade](https://www.postgresql.org/docs/current/pgupgrade.html)
 * [Look at "pacman directly install PostgreSQL on Arch Linux", if you want to use PostgreSQL instead of MySQL 5.7](https://github.com/hong539/local_library_website#prerequisites)
     * [With the upcoming end-of-life of MySQL Community Version v5.7 in October 2023 (Page 24)](https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/)

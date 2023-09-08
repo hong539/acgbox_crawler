@@ -131,3 +131,4 @@ dmypy.json
 # yaml
 *.yaml
 !example.yaml
+!login_db.yaml
