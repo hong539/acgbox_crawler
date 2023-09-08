@@ -1,5 +1,5 @@
 seed:
-  url: https://home.gamer.com.tw/acgbox.php?owner=
+  url: https://home.gamer.com.tw/acgbox.php?page=
 target:
   username: username
   number: number
