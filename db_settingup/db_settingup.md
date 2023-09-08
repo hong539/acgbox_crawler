@@ -25,6 +25,7 @@ sudo systemctl restart postgresql.service
 #Test codes with main.py
 #psycopg.errors.InsufficientPrivilege: permission denied for schema public
 GRANT ALL PRIVILEGES ON DATABASE acgbox_crawler TO acgbox_bot;
+GRANT ALL PRIVILEGES ON SCHEMA public TO acgbox_bot;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO acgbox_bot;
 ```
 

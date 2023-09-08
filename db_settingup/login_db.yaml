@@ -1,11 +1,11 @@
 seed:
-  url: https://example.com=
+  url: https://home.gamer.com.tw/acgbox.php?owner=
 target:
   username: username
   number: number
 db_settingup:
-  db_admin: mysql+<drivername>://root:passwd@host:port/
+  db_admin: postgresql+psycopg://acgbox_bot:passwd@host:port/acgbox_crawler
   name: gamer_crawler
-  user: username
+  user: acgbox_bot
   password: passwd
   host: host
