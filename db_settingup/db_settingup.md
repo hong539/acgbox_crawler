@@ -63,3 +63,11 @@ ALTER DATABASE postgres REFRESH COLLATION VERSION;
     * Enable native rootless overlays
     * [podman-docker](https://archlinux.org/packages/extra/x86_64/podman-docker/)
     * [podman-compose](https://github.com/containers/podman-compose)
+
+* sqlalchemy engine_url password duplicate@ cause str passe_error
+    * 請問程式設計中，對於密碼之字元/字串的特殊符號(例如在MySQL的密碼中有使用到符號@)解析錯誤是不是常常出現?
+        * 在程式設計中，特殊符號造成的解析錯誤是常常出現的問題之一，尤其是在處理密碼或其他機密資訊時。特殊符號（如 @、$、&、#、*等）在不同的程式語言和環境中可能有不同的含義，如果沒有正確地處理，就可能導致解析錯誤。尤其是在SQL語句中使用特殊符號時，如果沒有進行適當的轉義，就可能導致SQL注入攻擊等安全問題。因此，在處理密碼和其他機密資訊時，應該適當地處理特殊符號，以確保程式的安全性和正確性。
+
+```python
+mysql+<drivername>://<username>:<password>@<server>:<port>/dbname
+```    

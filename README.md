@@ -11,7 +11,7 @@ An Python bot for doing ETL(extract, transform, load) personal favorite lists fr
 
 ## to_do_list
 
-* Migration from MySQL to PostgreSQL
+* ~~Migration from MySQL to PostgreSQL~~
 * Find Last Updated Date of a Web Page
 * [TritonHo/RDBMS course](https://github.com/TritonHo/slides/blob/master/Taipei%202019-04%20course/lesson0.pdf)
 * ~~pandas to_sql method if_exists='append' implementation function update method for only update new ACG collects?~~
@@ -65,6 +65,7 @@ pipenv shell
 pipenv install
 
 #add some Packages
+pipenv install diagrams
 pipenv install "psycopg[binary,pool]"
 pipenv install requests
 pipenv install beautifulsoup4
@@ -90,17 +91,6 @@ time python main.py
 # real    2m55.699s
 # user    0m3.973s
 # sys     0m0.858s
-```
-
-## troubleshooting
-
-* ModuleNotFoundError: No module named 'MySQLdb'
-* sqlalchemy engine_url password duplicate@ cause str passe_error
-    * 請問程式設計中，對於密碼之字元/字串的特殊符號(例如在MySQL的密碼中有使用到符號@)解析錯誤是不是常常出現?
-        * 在程式設計中，特殊符號造成的解析錯誤是常常出現的問題之一，尤其是在處理密碼或其他機密資訊時。特殊符號（如 @、$、&、#、*等）在不同的程式語言和環境中可能有不同的含義，如果沒有正確地處理，就可能導致解析錯誤。尤其是在SQL語句中使用特殊符號時，如果沒有進行適當的轉義，就可能導致SQL注入攻擊等安全問題。因此，在處理密碼和其他機密資訊時，應該適當地處理特殊符號，以確保程式的安全性和正確性。
-
-```python
-mysql+<drivername>://<username>:<password>@<server>:<port>/dbname
 ```
 
 ## misc(miscellaneous)

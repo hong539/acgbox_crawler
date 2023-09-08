@@ -15,6 +15,7 @@ fake-useragent = "*"
 user-agent = "*"
 tornado = "*"
 psycopg = {version = "*", extras = ["binary", "pool"]}
+diagrams = "*"
 
 [dev-packages]
 
