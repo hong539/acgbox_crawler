@@ -3,6 +3,7 @@ version: '3.1'
 
 services:
   db:
+    #src: https://github.com/docker-library/mysql/blob/master/5.7/Dockerfile.oracle
     image: docker.io/library/mysql:5.7
     # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
     # (this is just an example, not intended to be a production configuration)
