@@ -2,6 +2,10 @@
 
 ## tips/guides/etc...
 
+* [PostgreSQL 15 手冊翻譯](https://docs.postgresql.tw/v/15/)
+* [Design Tools](https://wiki.postgresql.org/wiki/Design_Tools)
+* [FAQ/zh-hant](https://wiki.postgresql.org/wiki/FAQ/zh-hant)
+
 ```shell
 sudo -iu postgres
 createuser --interactive
