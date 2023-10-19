@@ -22,6 +22,8 @@ An Python bot for doing ETL(extract, transform, load) personal favorite lists fr
 * implementation function load_data
 * implementation function modfy_data with advanced string replace in pandas.DataFrame
 * refactor some parts codes to class acgbox_crawler(object)
+* podman-compose up with docker-selenium
+    * WARN[0011] aardvark-dns binary not found, container dns will not be enabled
 
 ## quick start
 
@@ -92,9 +94,17 @@ time python main.py
 # user    0m3.973s
 # sys     0m0.858s
 
+#podman
+sudo pacman -S aardvark-dns
+
 #docker/podman with selenium
 cd docker-selenium
+
+#podman
 podman-compose up -d
+podman-compose stop
+
+#docker
 docker-compose up -d
 ```
 
