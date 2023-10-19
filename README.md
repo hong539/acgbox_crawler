@@ -91,6 +91,11 @@ time python main.py
 # real    2m55.699s
 # user    0m3.973s
 # sys     0m0.858s
+
+#docker/podman with selenium
+cd docker-selenium
+podman-compose up -d
+docker-compose up -d
 ```
 
 ## misc(miscellaneous)
