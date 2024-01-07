@@ -1,16 +1,15 @@
-# Use postgres/example user/password credentials
-version: '3.1'
+version: '3.8'
 
 services:
-
-  db:
-    image: postgres
+  postgres:
+    image: postgres:16
     restart: always
     environment:
-      POSTGRES_PASSWORD: example
-
-  adminer:
-    image: adminer
-    restart: always
+      POSTGRES_DB: acgbox_crawler
+      POSTGRES_USER: acg_worker01
+      POSTGRES_PASSWORD: uL7AN2O09YLjU1cLhm1b
+      LANG: en_US.utf8  # 設置語言環境爲UTF-8
     ports:
-      - 8080:8080
+      - "5432:5432"  # 如果需要外部訪問，將本地端口映射到容器端口
+    # volumes:
+    #   - /path/to/store/data:/var/lib/postgresql/data  # 可選：指定持久化數據的存儲路徑
