@@ -1,0 +1,42 @@
+version: '3.7'
+services:
+  mysql-master:
+    image: mysql:5.7
+    container_name: mysql-master
+    ports:
+      - 33306:3306
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./volume/master/conf/:/etc/mysql/conf.d/      
+      - ./volume/master/data:/var/lib/mysql
+      - ./volume/master/log:/var/log/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: acgpasswd
+      MYSQL_DATABASE: acgbox
+    command: 
+    - mysqld
+    - --character-set-server=utf8
+    - --collation-server=utf8_general_ci
+    networks:
+      - overlay
+
+  # mysql-slave:
+  #   image: mysql:5.7
+  #   container_name: mysql-slave
+  #   ports:
+  #     - 33307:3306
+  #   depends_on:
+  #     - mysql-master
+  #   volumes:
+  #     - ./volume/slave/conf/:/etc/mysql/conf.d/
+  #     # - ./volume/slave/conf/slave.cnf:/etc/mysql/conf.d/slave.cnf
+  #     - ./volume/slave/data:/var/lib/mysql
+  #     - ./volume/slave/log:/var/log/mysql
+  #   environment: 
+  #     MYSQL_ROOT_PASSWORD: acgpasswd
+  #     MYSQL_DATABASE: acgbox    
+  #   networks:
+  #     - overlay
+
+networks:
+  overlay:

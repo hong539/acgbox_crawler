@@ -2,6 +2,7 @@
 
 ## tips/guides/etc...
 
+* [Using docker-compose to set containers timezones](https://stackoverflow.com/questions/39172652/using-docker-compose-to-set-containers-timezones)
 * [PostgreSQL 15 手冊翻譯](https://docs.postgresql.tw/v/15/)
 * [Design Tools](https://wiki.postgresql.org/wiki/Design_Tools)
 * [FAQ/zh-hant](https://wiki.postgresql.org/wiki/FAQ/zh-hant)
