@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# src: https://dev.mysql.com/doc/refman/5.7/en/mysqldump-definition-data-dumps.html
+
+mysqldump --no-create-info test > dump-data.sql
